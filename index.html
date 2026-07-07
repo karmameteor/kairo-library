@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KairoMS Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="topbar" aria-label="Library controls">
+      <div class="brand">
+        <div class="mark">K</div>
+        <div>
+          <h1>KairoMS Library</h1>
+          <p id="metaLine">Loading item database...</p>
+        </div>
+      </div>
+
+      <div class="searchWrap">
+        <input id="searchInput" type="search" placeholder="Search item name, ID, description, category..." autocomplete="off">
+        <button id="clearButton" type="button" title="Clear search">Clear</button>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Library summary">
+      <div class="stat">
+        <span id="totalItems">0</span>
+        <label>Total Items</label>
+      </div>
+      <div class="stat">
+        <span id="visibleItems">0</span>
+        <label>Showing</label>
+      </div>
+      <div class="stat">
+        <span id="clientItems">0</span>
+        <label>Client Assets</label>
+      </div>
+      <div class="stat">
+        <span id="serverItems">0</span>
+        <label>Server Assets</label>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="filters" aria-label="Filters">
+        <div class="filterBlock">
+          <h2>Type</h2>
+          <div id="typeFilters" class="chipGrid"></div>
+        </div>
+        <div class="filterBlock">
+          <h2>Category</h2>
+          <div id="categoryFilters" class="chipGrid tall"></div>
+        </div>
+        <div class="filterBlock">
+          <h2>Assets</h2>
+          <label class="check"><input id="onlyComplete" type="checkbox"> Client + server found</label>
+          <label class="check"><input id="onlyMissing" type="checkbox"> Missing any asset</label>
+        </div>
+      </aside>
+
+      <section class="catalog" aria-label="Items">
+        <div class="catalogHead">
+          <div>
+            <h2>Items A-Z</h2>
+            <p id="resultLine">Preparing catalog...</p>
+          </div>
+          <select id="sortSelect" aria-label="Sort items">
+            <option value="az">Name A-Z</option>
+            <option value="za">Name Z-A</option>
+            <option value="idAsc">ID Low-High</option>
+            <option value="idDesc">ID High-Low</option>
+          </select>
+        </div>
+        <div id="itemList" class="itemList" tabindex="0"></div>
+      </section>
+
+      <aside class="details" aria-label="Item details">
+        <div id="detailPanel" class="detailPanel empty">
+          <p class="eyebrow">Hover Or Select</p>
+          <h2>Choose an item</h2>
+          <p>Search the KairoMS database, then hover an entry to see its ID, description, category, and asset status.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
